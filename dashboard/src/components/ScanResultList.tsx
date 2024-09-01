@@ -8,7 +8,7 @@ export interface ScanResult {
   id: number;
   repositoryName: string;
   status: 'Queued' | 'In Progress' | 'Success' | 'Failure';
-  findings: any[];
+  findings: string;
   queuedAt: string;
 }
 
@@ -50,11 +50,11 @@ const ScanResultList: React.FC = () => {
             {results.map((result) => (
                 <tr key={result.id}>
                 <td>{result.repositoryName}</td>
-                <td><span >{result.status}</span></td>
+                <td><span >{result.status}</span></td> 
                 <td><span >
                       <Label>
                         <Icon name='find' /> {
-                        (result.findings !== null)?result.findings.length:''}
+                        (result.findings !== null)?JSON.parse(result.findings).length:''}
                       </Label>
                     </span></td>
                 <td>{result.queuedAt}</td>
