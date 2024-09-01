@@ -1,0 +1,47 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .table td {
+    background-color: #fff;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  .badge.success {
+    background-color: #28a745;
+  }
+  
+  .badge.failure {
+    background-color: #dc3545;
+  }
+  
+  .badge.queued {
+    background-color: #ffc107;
+  }
+  
+  .badge.in-progress {
+    background-color: #17a2b8;
+  }
+  
