@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './styles/List.css';
 import Badge from './Badge';
+import { Icon, Label } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
 
 export interface ScanResult {
   id: number;
@@ -41,7 +43,7 @@ const ScanResultList: React.FC = () => {
                 <th>Repository Name</th>
                 <th>Status</th>
                 <th>Findings</th>
-                <th>Timestamp</th>
+                <th>Queued At</th>
             </tr>
             </thead>
             <tbody>
@@ -49,20 +51,25 @@ const ScanResultList: React.FC = () => {
                 <tr key={result.id}>
                 <td>{result.repositoryName}</td>
                 <td><span >{result.status}</span></td>
-                <td><span >{result.findings}</span></td>
+                <td><span >
+                      <Label>
+                        <Icon name='find' /> {
+                        (result.findings !== null)?result.findings.length:''}
+                      </Label>
+                    </span></td>
                 <td>{result.queuedAt}</td>
                 </tr>
             ))}
             </tbody>
         </table>
-        {results.map((result) => (
+        {/* {results.map((result) => (
             <div>
             <div key={result.id}>
-                <Badge label={result.repositoryName} fields={[result.status]}/>
+              
             </div>
             <br />
           </div>
-        ))}
+        ))} */}
     </>
   );
 };

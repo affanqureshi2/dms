@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SubmitScanResult from './pages/SubmitScanResult';
 import ViewScanResults from './pages/ViewScanResults';
 import ViewFindings from './pages/ViewFindings';
-import './styles/App.css';
+import './components/styles/App.css';
 
 const App: React.FC = () => {
   return (

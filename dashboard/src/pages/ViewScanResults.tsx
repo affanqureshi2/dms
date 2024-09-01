@@ -1,6 +1,6 @@
 import React from 'react';
 import ScanResultList from '../components/ScanResultList';
-import '../styles/App.css';
+import '../components/styles/App.css';
 
 const ViewScanResults: React.FC = () => {
 

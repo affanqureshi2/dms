@@ -1,31 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
 
-interface DynamicFieldProps {
-  label: string;
-  fields: string[];
-//   messageIcon: React.ReactNode;
+interface LabelProps {
+  text: string;
+  color?: string;
+  size?: 'small' | 'medium' | 'large';
 }
 
-const Badge: React.FC<DynamicFieldProps> = ({ label, fields }) => {
-  return (
-    <div style={{ border: '1px solid #ccc', padding: '16px', borderRadius: '8px', width: '90%', position: 'relative' }}>
-      <div style={{ position: 'absolute', top: '8px', left: '8px' }}>
-        <strong>{label}</strong>
-      </div>
+const LabelWrapper = styled.span<{ color: string; size: string }>`
+  display: inline-block;
+  background-color: ${({ color }) => color};
+  padding: ${({ size }) => (size === 'large' ? '10px' : size === 'medium' ? '8px' : '5px')};
+  color: white;
+  font-size: ${({ size }) => (size === 'large' ? '16px' : size === 'medium' ? '14px' : '12px')};
+  border-radius: 3px;
+`;
 
-      <div style={{ position: 'absolute', top: '8px', right: '8px' }}>
-        {fields.map((field, index) => (
-          <div key={index} style={{ marginBottom: '8px' }}>
-            {field}
-          </div>
-        ))}
-      </div>
-
-      <div style={{ position: 'absolute', bottom: '8px', left: '8px' }}>
-        {/* {messageIcon} */}
-      </div>
-    </div>
-  );
+const Badge: React.FC<LabelProps> = ({ text, color = 'blue', size = 'medium' }) => {
+  return <LabelWrapper color={color} size={size}>{text}</LabelWrapper>;
 };
 
 export default Badge;

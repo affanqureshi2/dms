@@ -1,6 +1,6 @@
 import React from 'react';
 import ScanResultForm from '../components/ScanResultForm';
-import '../styles/App.css';
+import '../components/styles/App.css';
 
 const SubmitScanResult: React.FC = () => {
   return (
